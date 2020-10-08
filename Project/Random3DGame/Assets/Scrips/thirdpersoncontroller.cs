@@ -16,7 +16,7 @@ public class thirdpersoncontroller : MonoBehaviour
     [Range(0.1f, 100.0f)]
     private float hSens = 5.0f;
 
-    private float moveSpeed = 0.05f;
+    private float moveSpeed = 2.0f;
     private float jumpSpeed = 20.0f;
 
     private int layerMask = ~(1 << 8);
@@ -41,19 +41,19 @@ public class thirdpersoncontroller : MonoBehaviour
 	{
         if (Input.GetKey("w"))
         {
-            transform.position += moveSpeed * transform.forward;
+            transform.position += moveSpeed * transform.forward * 0.01f;
         }
         if (Input.GetKey("s"))
         {
-            transform.position -= moveSpeed * transform.forward;
+            transform.position -= moveSpeed * transform.forward * 0.01f;
         }
         if (Input.GetKey("a"))
         {
-            transform.position -= moveSpeed * transform.right;
+            transform.position -= moveSpeed * transform.right * 0.01f;
         }
         if (Input.GetKey("d"))
         {
-            transform.position += moveSpeed * transform.right;
+            transform.position += moveSpeed * transform.right * 0.01f;
         }
 
         if (Input.GetKeyDown("space"))

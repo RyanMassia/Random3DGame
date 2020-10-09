@@ -19,8 +19,8 @@ public class BasicEnemy : MonoBehaviour
 
 	private void Start()
 	{
-		playerRB = GameObject.Find("Player").GetComponent<Rigidbody>();
 		playerModel = GameObject.Find("Player Model");
+		playerRB = playerModel.GetComponent<Rigidbody>();
 		agent = GetComponent<NavMeshAgent>();
 
 		cooldown = 150;

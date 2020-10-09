@@ -9,15 +9,17 @@ public class thirdpersoncontroller : MonoBehaviour
 
     private Rigidbody rb;
 
-    [SerializeField]
-    [Range(0.1f, 100.0f)]
-    private float vSens = 5.0f;
-    [SerializeField]
-    [Range(0.1f, 100.0f)]
-    private float hSens = 5.0f;
+    private Vector3 moveVector;
+    private Vector3 camOffset;
 
-    private float moveSpeed = 2.0f;
+    [SerializeField]
+    [Range(0.1f, 100.0f)]
+    private float Sens = 5.0f;
+
+    private float maxSpeed = 5.0f;
+    private float moveForce = 2000.0f;
     private float jumpSpeed = 20.0f;
+    private float airMoveForce = 35.0f;
 
     private int layerMask = ~(1 << 8);
     private int maxJumps = 2;
@@ -25,36 +27,21 @@ public class thirdpersoncontroller : MonoBehaviour
 
     private bool isJumping = false;
 
-    void Start()
+    private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-
-        rb = GetComponent<Rigidbody>();
 
         playerModel = GameObject.Find("Player Model");
         playerCamera = GameObject.Find("Player Camera");
 
+        rb = playerModel.GetComponent<Rigidbody>();
+
         currJumps = maxJumps;
     }
 
-    void Movement()
+    private void MovementInput()
 	{
-        if (Input.GetKey("w"))
-        {
-            transform.position += moveSpeed * transform.forward * 0.01f;
-        }
-        if (Input.GetKey("s"))
-        {
-            transform.position -= moveSpeed * transform.forward * 0.01f;
-        }
-        if (Input.GetKey("a"))
-        {
-            transform.position -= moveSpeed * transform.right * 0.01f;
-        }
-        if (Input.GetKey("d"))
-        {
-            transform.position += moveSpeed * transform.right * 0.01f;
-        }
+        moveVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
         if (Input.GetKeyDown("space"))
         {
@@ -62,19 +49,47 @@ public class thirdpersoncontroller : MonoBehaviour
         }
     }
 
-    void CameraMovement()
+    private void Movement()
     {
-        transform.Rotate(0, Input.GetAxis("Mouse X") * hSens, 0, Space.Self);
-
-        // Lock the camera to above and behind the playerModel
-        if ((playerCamera.transform.position.y - playerModel.transform.position.y > 1 && Input.GetAxis("Mouse Y") > 0) ||
-            (Vector3.Dot(playerModel.transform.forward, -playerCamera.transform.forward) < 0 && Input.GetAxis("Mouse Y") < 0))   // Dot product will be negative when the camera is behind the player
+        // Check if the player is touching the ground
+        RaycastHit hit;
+        if (Physics.Raycast(playerModel.transform.position, -playerModel.transform.up, out hit, 0.5f, layerMask))
         {
-            playerCamera.transform.RotateAround(playerModel.transform.position, playerModel.transform.right, -Input.GetAxis("Mouse Y") * vSens);
+            // Convert the moveVector force to local space for the player
+            rb.AddForce(playerModel.transform.forward * moveVector.z * moveForce);
+            rb.AddForce(playerModel.transform.right * moveVector.x * moveForce);
+        }
+        else
+        {
+            rb.AddForce(playerModel.transform.forward * moveVector.z * airMoveForce);
+            rb.AddForce(playerModel.transform.right * moveVector.x * airMoveForce);
+        }
+
+        // Enforce max horizontal velocity
+        if (rb.velocity.x > maxSpeed)
+		{
+            rb.velocity = new Vector3(maxSpeed, rb.velocity.y, rb.velocity.z);
+		}
+        if (rb.velocity.x < -maxSpeed)
+        {
+            rb.velocity = new Vector3(-maxSpeed, rb.velocity.y, rb.velocity.z);
+        }
+        if (rb.velocity.z > maxSpeed)
+        {
+            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, maxSpeed);
+        }
+        if (rb.velocity.z < -maxSpeed)
+        {
+            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, -maxSpeed);
         }
     }
 
-    void Jumping()
+    private void CameraMovement()
+    {
+        playerModel.transform.Rotate(0, Input.GetAxis("Mouse X") * Sens, 0, Space.Self);
+    }
+
+    private void Jumping()
 	{
         // Check if the player is on the ground
         RaycastHit hit;
@@ -96,12 +111,13 @@ public class thirdpersoncontroller : MonoBehaviour
 
     private void Update()
 	{
-        Movement();
+        MovementInput();
         CameraMovement();
     }
 
 	private void FixedUpdate()
 	{
         Jumping();
+        Movement();
 	}
 }

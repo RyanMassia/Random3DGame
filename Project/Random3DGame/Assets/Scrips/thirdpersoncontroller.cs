@@ -103,7 +103,7 @@ public class thirdpersoncontroller : MonoBehaviour
         if (currJumps > 0 && isJumping)
         {
             // Set the player's vertical velocity
-            rb.velocity = transform.up * jumpSpeed;
+            rb.velocity = new Vector3(rb.velocity.x, jumpSpeed, rb.velocity.z);
             currJumps--;
             isJumping = false;
         }

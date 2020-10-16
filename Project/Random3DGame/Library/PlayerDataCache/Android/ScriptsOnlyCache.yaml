@@ -77,8 +77,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
-    - Class: 108
-      Script: {instanceID: 0}
     - Class: 114
       Script: {instanceID: 11722}
     - Class: 114
@@ -90,43 +88,43 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11730}
     - Class: 114
-      Script: {instanceID: 11894}
+      Script: {instanceID: 11898}
     - Class: 114
-      Script: {instanceID: 11968}
+      Script: {instanceID: 11972}
     - Class: 114
-      Script: {instanceID: 12086}
+      Script: {instanceID: 12090}
     - Class: 114
-      Script: {instanceID: 12404}
+      Script: {instanceID: 12408}
     - Class: 114
-      Script: {instanceID: 12436}
+      Script: {instanceID: 12440}
     - Class: 114
-      Script: {instanceID: 12890}
+      Script: {instanceID: 12894}
     - Class: 114
-      Script: {instanceID: 12936}
+      Script: {instanceID: 12940}
     - Class: 114
-      Script: {instanceID: 13110}
+      Script: {instanceID: 13114}
     - Class: 114
-      Script: {instanceID: 13126}
+      Script: {instanceID: 13130}
     - Class: 114
-      Script: {instanceID: 13332}
+      Script: {instanceID: 13336}
     - Class: 114
-      Script: {instanceID: 13398}
+      Script: {instanceID: 13402}
     - Class: 114
-      Script: {instanceID: 13436}
+      Script: {instanceID: 13440}
     - Class: 114
-      Script: {instanceID: 13524}
+      Script: {instanceID: 13528}
     - Class: 114
-      Script: {instanceID: 13570}
+      Script: {instanceID: 13574}
     - Class: 114
-      Script: {instanceID: 13602}
+      Script: {instanceID: 13606}
     - Class: 114
-      Script: {instanceID: 13718}
+      Script: {instanceID: 13722}
     - Class: 114
-      Script: {instanceID: 13786}
+      Script: {instanceID: 13790}
     - Class: 114
-      Script: {instanceID: 13804}
+      Script: {instanceID: 13808}
     - Class: 114
-      Script: {instanceID: 13852}
+      Script: {instanceID: 13856}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -175,27 +173,29 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
+      Script: {instanceID: 11722}
+    - Class: 114
       Script: {instanceID: 11724}
     - Class: 114
       Script: {instanceID: 11726}
     - Class: 114
       Script: {instanceID: 11728}
     - Class: 114
-      Script: {instanceID: 11968}
+      Script: {instanceID: 11972}
     - Class: 114
-      Script: {instanceID: 12404}
+      Script: {instanceID: 12408}
     - Class: 114
-      Script: {instanceID: 12470}
+      Script: {instanceID: 12474}
     - Class: 114
-      Script: {instanceID: 13110}
+      Script: {instanceID: 13114}
     - Class: 114
-      Script: {instanceID: 13332}
+      Script: {instanceID: 13336}
     - Class: 114
-      Script: {instanceID: 13398}
+      Script: {instanceID: 13402}
     - Class: 114
-      Script: {instanceID: 13524}
+      Script: {instanceID: 13528}
     - Class: 114
-      Script: {instanceID: 13786}
+      Script: {instanceID: 13790}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -227,16 +227,16 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
-      Hash: 0c05f2bfb402def3f0a85a62a2323c7f
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Slider
-  - hash:
-      serializedVersion: 2
       Hash: 4bc4346a71a8df53a6b106f68ef3a190
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: CanvasScaler
+  - hash:
+      serializedVersion: 2
+      Hash: 0c05f2bfb402def3f0a85a62a2323c7f
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Slider
   - hash:
       serializedVersion: 2
       Hash: f7bb6096199e0cf058d5d69878184cf4
@@ -569,7 +569,7 @@ ScriptsOnlyBuild:
     className: SliderValuePass
   - hash:
       serializedVersion: 2
-      Hash: 33043836a90de4b465c4d1a031ec8c36
+      Hash: f4e98515d2ec073cd8b33e41a8744d28
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIM
@@ -693,4 +693,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Test Stage.unity
   - Assets/Scenes/Levels/Level 2.unity
   playerPath: C:/Users/ACER/Documents/GitHub/Random3DGame/Project/Random3DGame/Test
-    Builds/Random3dGame003.apk
+    Builds/Random3dGame004.apk

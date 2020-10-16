@@ -16,16 +16,16 @@ public class thirdpersoncontroller : MonoBehaviour
     [Range(0.1f, 100.0f)]
     private float Sens = 5.0f;
 
-    private float maxSpeed = 5.0f;
-    private float moveForce = 2000.0f;
-    private float jumpSpeed = 20.0f;
+    private float moveForce = 100.0f;
     private float airMoveForce = 35.0f;
+    private float maxSpeed = 5.0f;
+    private float slowForce = 3.0f;
+    private float jumpForce = 200.0f;
 
     private int layerMask = ~(1 << 8);
-    private int maxJumps = 2;
-    private int currJumps;
 
     private bool isJumping = false;
+    private bool hasAirJumped = false;
 
     private void Start()
     {
@@ -35,13 +35,15 @@ public class thirdpersoncontroller : MonoBehaviour
         playerCamera = GameObject.Find("Player Camera");
 
         rb = playerModel.GetComponent<Rigidbody>();
-
-        currJumps = maxJumps;
     }
 
     private void MovementInput()
 	{
         moveVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
+        moveVector.Normalize();
+        // Convert to local space
+        moveVector = rb.transform.TransformDirection(moveVector);
 
         if (Input.GetKeyDown("space"))
         {
@@ -51,37 +53,23 @@ public class thirdpersoncontroller : MonoBehaviour
 
     private void Movement()
     {
-        // Check if the player is touching the ground
-        RaycastHit hit;
-        if (Physics.Raycast(playerModel.transform.position, -playerModel.transform.up, out hit, 0.5f, layerMask))
+        // Check if the player is touching the ground, slow their movement if in the air
+        if (TouchingGround())
         {
-            // Convert the moveVector force to local space for the player
-            rb.AddForce(playerModel.transform.forward * moveVector.z * moveForce);
-            rb.AddForce(playerModel.transform.right * moveVector.x * moveForce);
+            rb.AddForce(moveVector * moveForce, ForceMode.Acceleration);
         }
         else
         {
-            rb.AddForce(playerModel.transform.forward * moveVector.z * airMoveForce);
-            rb.AddForce(playerModel.transform.right * moveVector.x * airMoveForce);
+            rb.AddForce(moveVector * airMoveForce, ForceMode.Acceleration);
         }
 
-        // Enforce max horizontal velocity
-        if (rb.velocity.x > maxSpeed)
+        Vector3 horizVel = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+
+        // Check if the player has exceeded the max speed, add force in the opposite direction if they have
+        if (horizVel.magnitude > maxSpeed)
 		{
-            rb.velocity = new Vector3(maxSpeed, rb.velocity.y, rb.velocity.z);
+            rb.AddForce(-horizVel * slowForce, ForceMode.Acceleration);
 		}
-        if (rb.velocity.x < -maxSpeed)
-        {
-            rb.velocity = new Vector3(-maxSpeed, rb.velocity.y, rb.velocity.z);
-        }
-        if (rb.velocity.z > maxSpeed)
-        {
-            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, maxSpeed);
-        }
-        if (rb.velocity.z < -maxSpeed)
-        {
-            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, -maxSpeed);
-        }
     }
 
     private void CameraMovement()
@@ -91,22 +79,51 @@ public class thirdpersoncontroller : MonoBehaviour
 
     private void Jumping()
 	{
-        // Check if the player is on the ground
-        RaycastHit hit;
-        if (Physics.Raycast(playerModel.transform.position, -playerModel.transform.up, out hit, 0.5f, layerMask))
+        // Check if the player is grounded
+        bool isGrounded = TouchingGround();
+
+        // Reset their air jumps if they are
+        if (isGrounded)
 		{
-            // Reset the amount of jumps the player has available
-            currJumps = maxJumps;
+            hasAirJumped = false;
 		}
 
-        // Limit the player's jumps to maxJumps 
-        if (currJumps > 0 && isJumping)
+        // Check if the player has pressed the jump button
+        if (isJumping)
         {
-            // Set the player's vertical velocity
-            rb.velocity = new Vector3(rb.velocity.x, jumpSpeed, rb.velocity.z);
-            currJumps--;
+            if (isGrounded)
+			{
+                // Set the player's vertical velocity to 0
+                rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+
+                // Add an upward impulse force to the rb
+                rb.AddForce(rb.transform.up * jumpForce, ForceMode.Impulse);
+            }
+            // If they are in the air and have an air jump available
+            else if (!isGrounded && !hasAirJumped)
+            {
+                // Stops the player from air jumping multiple times
+                hasAirJumped = true;
+
+                // Set the player's vertical velocity to 0
+                rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+
+                // Add an upward impulse force to the rb
+                rb.AddForce(rb.transform.up * jumpForce, ForceMode.Impulse);
+            }
+
             isJumping = false;
         }
+    }
+
+    private bool TouchingGround()
+	{
+        // Check if the player is on the ground
+        if (Physics.Raycast(playerModel.transform.position, -playerModel.transform.up, 0.5f, layerMask))
+        {
+            return true;
+        }
+        return false;
     }
 
     private void Update()

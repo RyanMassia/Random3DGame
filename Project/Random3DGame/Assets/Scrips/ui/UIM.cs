@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class UIM : MonoBehaviour
 {
     private static UIM instance = null;
-    public GameObject OptionsPanel;
-    public GameObject CreditsPanel;
-    public GameObject Panel1;
-    GameObject Panel2;
+    public Text timerText;
+
+    public float seconds;
+    public float minutes;
 
     void Awake()
     {
@@ -25,13 +25,15 @@ public class UIM : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        minutes = (int)(Time.time / 60.0f);
+        seconds = (int)(Time.time % 60.0f);
+        timerText.text = minutes.ToString("00") + ":" + seconds.ToString("00"); 
     }
 
     public void openPanel(GameObject Panel)

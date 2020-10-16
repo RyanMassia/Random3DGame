@@ -1,4 +1,0 @@
-#Fri Oct 16 11:18:35 EDT 2020
-base.0=C\:\\Users\\ACER\\Documents\\GitHub\\Random3DGame\\Project\\Random3DGame\\Temp\\gradleOut\\launcher\\build\\intermediates\\dex\\debug\\out\\classes.dex
-path.0=classes.dex
-renamed.0=classes.dex

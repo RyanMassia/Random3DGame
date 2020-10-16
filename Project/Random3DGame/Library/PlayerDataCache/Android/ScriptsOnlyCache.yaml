@@ -179,8 +179,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11726}
     - Class: 114
-      Script: {instanceID: 11728}
-    - Class: 114
       Script: {instanceID: 11730}
     - Class: 114
       Script: {instanceID: 12404}
@@ -693,4 +691,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Test Stage.unity
   - Assets/Scenes/Levels/Level 2.unity
   playerPath: C:/Users/ACER/Documents/GitHub/Random3DGame/Project/Random3DGame/Test
-    Builds/Random3dGame001.apk
+    Builds/Random3dGame002.apk

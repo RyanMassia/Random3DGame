@@ -25,7 +25,7 @@ public class BasicEnemy : MonoBehaviour
 
 		cooldown = 150;
 		cdTimer = 0;
-		pushForce = 2000;
+		pushForce = 200;
 	}
 
 	private void Update()
@@ -42,7 +42,7 @@ public class BasicEnemy : MonoBehaviour
 			agent.SetDestination(transform.position);
 			
 			// Push the player away
-			playerRB.AddForce(new Vector3(playerModel.transform.position.x - transform.position.x, 0, playerModel.transform.position.z - transform.position.z).normalized * pushForce);
+			playerRB.AddForce(new Vector3(playerModel.transform.position.x - transform.position.x, 0, playerModel.transform.position.z - transform.position.z).normalized * pushForce, ForceMode.Acceleration);
 		}
 
 		// Decrement the cd timer

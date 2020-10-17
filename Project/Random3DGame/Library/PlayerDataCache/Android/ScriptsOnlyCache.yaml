@@ -30,7 +30,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Image
     - UnityEngine.UI.InputField
     - UnityEngine.UI.Outline
-    - UnityEngine.UI.RawImage
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
     - UnityEngine.UI.Toggle
@@ -88,43 +87,41 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11730}
     - Class: 114
-      Script: {instanceID: 11898}
+      Script: {instanceID: 11894}
     - Class: 114
-      Script: {instanceID: 11972}
+      Script: {instanceID: 11968}
     - Class: 114
-      Script: {instanceID: 12090}
+      Script: {instanceID: 12086}
     - Class: 114
-      Script: {instanceID: 12408}
+      Script: {instanceID: 12404}
     - Class: 114
-      Script: {instanceID: 12440}
+      Script: {instanceID: 12436}
     - Class: 114
-      Script: {instanceID: 12894}
+      Script: {instanceID: 12936}
     - Class: 114
-      Script: {instanceID: 12940}
+      Script: {instanceID: 13110}
     - Class: 114
-      Script: {instanceID: 13114}
+      Script: {instanceID: 13126}
     - Class: 114
-      Script: {instanceID: 13130}
+      Script: {instanceID: 13332}
     - Class: 114
-      Script: {instanceID: 13336}
+      Script: {instanceID: 13398}
     - Class: 114
-      Script: {instanceID: 13402}
+      Script: {instanceID: 13436}
     - Class: 114
-      Script: {instanceID: 13440}
+      Script: {instanceID: 13524}
     - Class: 114
-      Script: {instanceID: 13528}
+      Script: {instanceID: 13570}
     - Class: 114
-      Script: {instanceID: 13574}
+      Script: {instanceID: 13602}
     - Class: 114
-      Script: {instanceID: 13606}
+      Script: {instanceID: 13718}
     - Class: 114
-      Script: {instanceID: 13722}
+      Script: {instanceID: 13786}
     - Class: 114
-      Script: {instanceID: 13790}
+      Script: {instanceID: 13804}
     - Class: 114
-      Script: {instanceID: 13808}
-    - Class: 114
-      Script: {instanceID: 13856}
+      Script: {instanceID: 13852}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -181,21 +178,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11728}
     - Class: 114
-      Script: {instanceID: 11972}
+      Script: {instanceID: 11968}
     - Class: 114
-      Script: {instanceID: 12408}
+      Script: {instanceID: 12404}
     - Class: 114
-      Script: {instanceID: 12474}
+      Script: {instanceID: 12470}
     - Class: 114
-      Script: {instanceID: 13114}
+      Script: {instanceID: 13110}
     - Class: 114
-      Script: {instanceID: 13336}
+      Script: {instanceID: 13332}
     - Class: 114
-      Script: {instanceID: 13402}
+      Script: {instanceID: 13398}
     - Class: 114
-      Script: {instanceID: 13528}
+      Script: {instanceID: 13524}
     - Class: 114
-      Script: {instanceID: 13790}
+      Script: {instanceID: 13786}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -693,4 +690,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Test Stage.unity
   - Assets/Scenes/Levels/Level 2.unity
   playerPath: C:/Users/ACER/Documents/GitHub/Random3DGame/Project/Random3DGame/Test
-    Builds/Random3dGame004.apk
+    Builds/Random3dGame005.apk

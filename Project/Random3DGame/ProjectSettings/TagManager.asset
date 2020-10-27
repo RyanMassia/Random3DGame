@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - check point
   - Out of Bounds
+  - Check Point
+  - end zone
   layers:
   - Default
   - TransparentFX

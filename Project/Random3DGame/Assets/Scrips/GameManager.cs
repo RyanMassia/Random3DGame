@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject player;
+    public GameObject spawnPoint;
+    public GameObject endZone;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,5 +25,10 @@ public class GameManager : MonoBehaviour
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+    }
+        
+    public void LevelCompleted()
+    {
+       // UI.levelPanel.SetActive(true);
     }
 }

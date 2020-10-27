@@ -7,6 +7,7 @@ public class UIM : MonoBehaviour
 {
     private static UIM instance = null;
     public Text timerText;
+    public GameObject levelPanel;
 
     public float seconds;
     public float minutes;
@@ -25,7 +26,7 @@ public class UIM : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        levelPanel = GameObject.Find("Level Panel");
     }
 
     // Update is called once per frame

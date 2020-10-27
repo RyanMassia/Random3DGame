@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - check point
+  - Out of Bounds
   layers:
   - Default
   - TransparentFX

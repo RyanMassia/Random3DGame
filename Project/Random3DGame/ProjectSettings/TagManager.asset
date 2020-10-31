@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Out of Bounds
   - Check Point
-  - end zone
+  - End Zone
   layers:
   - Default
   - TransparentFX

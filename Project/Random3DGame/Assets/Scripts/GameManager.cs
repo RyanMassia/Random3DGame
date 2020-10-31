@@ -1,17 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class GameManager : MonoBehaviour
-{
-    public GameObject checkpoint;
-    Player player;
+{  
+    UIM UIM;
+    public GameObject player;
+
+    private static GameManager instance = null;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        UIM = GameObject.Find("UIM").GetComponent<UIM>();
     }
 
     // Update is called once per frame
@@ -20,17 +34,8 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void LoadScene(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
-    }
-
-    public void UpdateSpawn()
-    {
-        //player.spawnPoint.transform.position = checkpoint.transform.position;
-    }
-
     public void LevelCompleted()
-    {   
+    {
+        UIM.levelPanel.SetActive(true);
     }
 }

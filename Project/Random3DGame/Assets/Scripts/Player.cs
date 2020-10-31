@@ -6,16 +6,16 @@ public class Player : MonoBehaviour
 {
     GameObject playerModel; // player object
     public GameObject spawnPoint; // spawn point of player after death 
-    public float deaths; // death counter 
-    UIM UIM;
-    GameManager GM;
+    float deaths; // death counter 
+    UIM UIM;//ui manager
+    GameManager GM;// game manger
 
     // Start is called before the first frame update
     void Start()
     {
         playerModel = GameObject.Find("Player Model"); // Looks for player object
-        UIM = GameObject.Find("UIM").GetComponent<UIM>();
-        GM = GameObject.Find("GM").GetComponent<GameManager>();
+        UIM = GameObject.Find("UIM").GetComponent<UIM>(); // gets the UI manager
+        GM = GameObject.Find("GM").GetComponent<GameManager>(); // gets the game manager
     }
 
     // Update is called once per frame
@@ -30,20 +30,17 @@ public class Player : MonoBehaviour
         {
             Death(); // if the player hits a out of bounds area death function plays 
         }
-        //if(other.CompareTag("Check Point"))
-        //{
-        //    GM.UpdateSpawn(); to be fixed 
-        //    Debug.Log("updated");
-        //}
-        if(other.CompareTag("end zone"))
+        if(other.CompareTag("End Zone"))
         {
-            //GM.
+            //loads the level selector to pick another level
+            GM.LevelCompleted();
         }
     }
     
     void Spawn()
     {
-        playerModel.transform.position = spawnPoint.transform.position; // sets player postion to spawn point 
+        // sets player postion to spawn point 
+        playerModel.transform.position = spawnPoint.transform.position; 
     }    
 
     void Death()

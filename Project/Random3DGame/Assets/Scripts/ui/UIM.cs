@@ -10,8 +10,8 @@ public class UIM : MonoBehaviour
     public GameObject levelPanel;
     public Text deathcount;
 
-    public float seconds;
-    public float minutes;
+    float seconds;
+    float minutes;
 
     void Awake()
     {
@@ -27,7 +27,7 @@ public class UIM : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        levelPanel = GameObject.Find("Level Panel");
+        //levelPanel = GameObject.Find("Level Panel");
     }
 
     // Update is called once per frame

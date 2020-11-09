@@ -122,7 +122,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 15819
+  controlID: 8606
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 15702
+  controlID: 8611
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 15703
+  controlID: 8612
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -397,24 +397,24 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 187}
+      scrollPos: {x: 0, y: 1099}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 84a9feffa8c7feff1afbfeff7a0dffffaa12ffff802dffff
+      m_ExpandedIDs: 6617ffffb031ffff163effffee58ffff045fffff105fffff288effff149cffff22afffff16b1ffff44c1ffff44dbffff96e1ffff02f9ffff62fbffff50370000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Prop_Lollipop (2)
+        m_OriginalName: Prop_Lollipop (2)
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -50822
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 4
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -460,9 +460,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 3.752441, y: -2.9016562, z: 3.5518656}
+    m_Target: {x: 4.5137634, y: -1.8527989, z: 5.8124475}
     speed: 2
-    m_Value: {x: 3.752441, y: -2.9016562, z: 3.5518656}
+    m_Value: {x: 4.5137634, y: -1.8527989, z: 5.8124475}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -509,13 +509,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.27056816, y: 0.15740028, z: -0.045032702, w: 0.94883037}
+    m_Target: {x: 0.24379855, y: 0.17990632, z: -0.046726424, w: 0.95204973}
     speed: 2
-    m_Value: {x: 0.27188358, y: 0.15873206, z: -0.045670226, w: 0.9480494}
+    m_Value: {x: 0.24368116, y: 0.18129921, z: -0.047082983, w: 0.9515952}
   m_Size:
-    m_Target: 5.4021163
+    m_Target: 8.0870075
     speed: 2
-    m_Value: 5.4021163
+    m_Value: 8.0870075
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -604,21 +604,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Resources/FSP/Platformer/Models/Prefabs
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Resources/FSP/Platformer/Models/Prefabs
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\ACER\Documents\GitHub\Random3DGame\Project\Random3DGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 28650000
-    m_LastClickedID: 25896
-    m_ExpandedIDs: 00000000126500001a6500001c6500002a650000646500006865000000ca9a3b
+    m_SelectedIDs: 203c0000
+    m_LastClickedID: 15392
+    m_ExpandedIDs: 00000000cc3b0000ce3b0000d03b0000d23b0000d43b0000ec3b0000f43b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -646,7 +646,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001a6500001c6500002a650000646500006865000000ca9a3b
+    m_ExpandedIDs: 00000000cc3b0000ce3b0000d03b0000d23b0000d43b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -673,7 +673,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000c8440000be46000098440000b0540000000000000c41000026440000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -698,7 +698,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 164}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 217

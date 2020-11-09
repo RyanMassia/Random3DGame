@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 579, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 15540
+  controlID: 110
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_MinSize: {x: 303, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 15541
+  controlID: 111
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_MinSize: {x: 303, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 15509
+  controlID: 55
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -217,10 +217,10 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
+      scrollPos: {x: 0, y: 560}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 84a9feff7a0dffffaa12ffff802dffff
+      m_ExpandedIDs: 6a98ffff149cffff22afffff16b1ffff44c1ffff44dbffff96e1ffffeeedffff62fbffff50370000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -308,9 +308,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.1660073, y: -3.0442722, z: -7.320644}
+    m_Target: {x: 10.077006, y: -23.503473, z: 38.249607}
     speed: 2
-    m_Value: {x: -1.1660073, y: -3.0442722, z: -7.320644}
+    m_Value: {x: 10.077006, y: -23.503473, z: 38.249607}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -357,20 +357,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.088012874, y: -0.9118916, z: 0.2944238, w: 0.2725219}
+    m_Target: {x: 0.24965209, y: 0.10371878, z: -0.027245339, w: 0.9625541}
     speed: 2
-    m_Value: {x: 0.08800205, y: -0.9117794, z: 0.29438758, w: 0.2724884}
+    m_Value: {x: 0.2496101, y: 0.10370134, z: -0.027240757, w: 0.9623922}
   m_Size:
-    m_Target: 3.4573522
+    m_Target: 25.554806
     speed: 2
-    m_Value: 3.4573522
+    m_Value: 25.554806
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 0.7861
-    m_SpeedNormalized: 0.39
+    m_Speed: 0.72639996
+    m_SpeedNormalized: 0.35999998
     m_SpeedMin: 0.01
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -479,21 +479,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Resources/FSP/Platformer/Models/Prefabs
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Resources/FSP/Platformer/Models/Prefabs
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\ACER\Documents\GitHub\Random3DGame\Project\Random3DGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 28650000
-    m_LastClickedID: 25896
-    m_ExpandedIDs: 00000000126500001a6500001c6500002a650000646500006865000000ca9a3b
+    m_SelectedIDs: 203c0000
+    m_LastClickedID: 15392
+    m_ExpandedIDs: 00000000cc3b0000ce3b0000d03b0000d23b0000d43b0000ec3b0000f43b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -521,7 +521,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001a6500001c6500002a650000646500006865000000ca9a3b
+    m_ExpandedIDs: 00000000cc3b0000ce3b0000d03b0000d23b0000d43b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -546,8 +546,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 84a9feff
-    m_LastClickedInstanceID: -87676
+    m_SelectedInstanceIDs: 4ef8ffff
+    m_LastClickedInstanceID: -1970
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000c8440000be46000098440000b0540000000000000c41000026440000
     m_RenameOverlay:
@@ -573,7 +573,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 836}
     m_GridSize: 16
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 217
@@ -660,7 +660,7 @@ MonoBehaviour:
     m_CachedPref: 160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -87676
+  m_LastInspectedObjectInstanceID: -6084
   m_LastVerticalScrollValue: 0
   m_AssetGUID: 
   m_InstanceID: 0

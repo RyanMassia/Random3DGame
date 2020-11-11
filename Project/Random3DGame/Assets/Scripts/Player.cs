@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    GameObject playerModel; // player object
-    public GameObject spawnPoint; // spawn point of player after death 
-    float deaths; // death counter 
-    UIM UIM;//ui manager
-    GameManager GM;// game manger
+    GameObject playerModel; //player object
+    public GameObject spawnPoint; //spawn point of player after death 
+    float deaths; //death counter 
+    UIM UIM; //ui manager
+    GameManager GM; //game manger
 
     // Start is called before the first frame update
     void Start()
     {
-        playerModel = GameObject.Find("Player Model"); // Looks for player object
-        UIM = GameObject.Find("UIM").GetComponent<UIM>(); // gets the UI manager
-        GM = GameObject.Find("GM").GetComponent<GameManager>(); // gets the game manager
+        playerModel = GameObject.Find("shadow"); // Looks for player object
+        //UIM = GameObject.Find("UIM").GetComponent<UIM>(); // gets the UI manager
+        //GM = GameObject.Find("GM").GetComponent<GameManager>(); // gets the game manager
     }
 
     // Update is called once per frame
@@ -30,11 +30,11 @@ public class Player : MonoBehaviour
         {
             Death(); // if the player hits a out of bounds area death function plays 
         }
-        if(other.CompareTag("End Zone"))
-        {
-            //loads the level selector to pick another level
-            GM.LevelCompleted();
-        }
+        //if(other.CompareTag("End Zone"))
+        //{
+        //    //loads the level selector to pick another level
+        //    //GM.LevelCompleted();
+        //}
     }
     
     void Spawn()
@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
     void Death()
     {
         deaths++; // upddates death counter
-        UIM.deathcount.text = deaths.ToString("0"); // displays deathcounter of screen
+        //UIM.deathcount.text = deaths.ToString("0"); // displays deathcounter of screen
         Spawn(); // runs spawn function
     }
 }

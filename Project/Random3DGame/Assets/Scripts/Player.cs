@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         playerModel = GameObject.Find("shadow"); // Looks for player object
-        //UIM = GameObject.Find("UIM").GetComponent<UIM>(); // gets the UI manager
+        UIM = GameObject.Find("UIM").GetComponent<UIM>(); // gets the UI manager
         //GM = GameObject.Find("GM").GetComponent<GameManager>(); // gets the game manager
     }
 
@@ -30,11 +30,10 @@ public class Player : MonoBehaviour
         {
             Death(); // if the player hits a out of bounds area death function plays 
         }
-        //if(other.CompareTag("End Zone"))
-        //{
-        //    //loads the level selector to pick another level
-        //    //GM.LevelCompleted();
-        //}
+        if (other.CompareTag("Coin"))
+        {
+            UIM.ScoreToText();
+        }
     }
     
     void Spawn()

@@ -6,8 +6,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {  
     UIM UIM;
-    public GameObject player;
-
+    public int score = 0;
     private static GameManager instance = null;
 
     void Awake()
@@ -28,10 +27,9 @@ public class GameManager : MonoBehaviour
         UIM = GameObject.Find("UIM").GetComponent<UIM>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ScoreUpdate()
     {
-        
+        score++;
     }
 
     public void LevelCompleted()

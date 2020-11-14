@@ -9,6 +9,8 @@ public class UIM : MonoBehaviour
     public Text timerText;
     public GameObject levelPanel;
     public Text deathcount;
+    public Text ScoreText;
+    GameManager GM;
 
     float seconds;
     float minutes;
@@ -27,23 +29,31 @@ public class UIM : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
         //levelPanel = GameObject.Find("Level Panel");
     }
 
     // Update is called once per frame
     void Update()
     {
-        Timer(timerText);
+        //Timer(timerText);
     }
 
-    void Timer(Text trackTime )
+    //void Timer(Text trackTime )
+    //{
+    //    // has the floats track time in mintues and seconds 
+    //    minutes = (int)(Time.time / 60.0f);
+    //    seconds = (int)(Time.time % 60.0f);
+    //    //converts the floats to a string to be displayed in game 
+    //    trackTime.text = minutes.ToString("00") + ":" + seconds.ToString("00");
+    //}
+
+    public void ScoreToText()
     {
-        // has the floats track time in mintues and seconds 
-        minutes = (int)(Time.time / 60.0f);
-        seconds = (int)(Time.time % 60.0f);
-        //converts the floats to a string to be displayed in game 
-        trackTime.text = minutes.ToString("00") + ":" + seconds.ToString("00");
+        GM.ScoreUpdate();
+        ScoreText.text = GM.score.ToString("00");
     }
+
 
     public void openPanel(GameObject Panel)
     {

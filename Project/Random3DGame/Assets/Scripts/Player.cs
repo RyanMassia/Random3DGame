@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
     void Death()
     {
         deaths++; // upddates death counter
-        //UIM.deathcount.text = deaths.ToString("0"); // displays deathcounter of screen
+        UIM.deathcount.text = deaths.ToString("0"); // displays deathcounter of screen
         Spawn(); // runs spawn function
     }
 }

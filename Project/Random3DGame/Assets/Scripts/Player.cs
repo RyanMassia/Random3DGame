@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    UIM UIM; //ui manager
+    //GameManager GM; //game manger
     GameObject playerModel; //player object
     public GameObject spawnPoint; //spawn point of player after death 
     float deaths; //death counter 
-    UIM UIM; //ui manager
-    GameManager GM; //game manger
+    public float health = 100f; // keeps track of player healtrh
 
     // Start is called before the first frame update
     void Start()
@@ -18,15 +19,29 @@ public class Player : MonoBehaviour
         //GM = GameObject.Find("GM").GetComponent<GameManager>(); // gets the game manager
     }
 
-    // Update is called once per frame
-    void Update()
+    void DamageTaken()
     {
-        
+        //TBC
     }
 
+    void Spawn()
+    {
+        // sets player postion to spawn point 
+        health = 100;// resets health to 100
+        playerModel.transform.position = spawnPoint.transform.position; 
+    }    
+
+    void Death()
+    {
+        deaths++; // upddates death counter
+        Spawn(); // runs spawn function
+    }
+
+
+    //add other functions above please
     void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Out of Bounds"))
+        if (other.CompareTag("Out of Bounds"))
         {
             Death(); // if the player hits a out of bounds area death function plays 
         }
@@ -34,18 +49,9 @@ public class Player : MonoBehaviour
         {
             UIM.ScoreToText();
         }
-    }
-    
-    void Spawn()
-    {
-        // sets player postion to spawn point 
-        playerModel.transform.position = spawnPoint.transform.position; 
-    }    
-
-    void Death()
-    {
-        deaths++; // upddates death counter
-        UIM.deathcount.text = deaths.ToString("0"); // displays deathcounter of screen
-        Spawn(); // runs spawn function
+        //if (other.CompareTag("Enemy"))
+        //{
+        //    DamageTaken(); TBC
+        //}
     }
 }

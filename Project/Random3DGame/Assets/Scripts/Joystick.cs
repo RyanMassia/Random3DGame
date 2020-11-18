@@ -5,9 +5,9 @@ using UnityEngine.EventSystems;
 
 public class Joystick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-	private Vector3 offset;
+	private Vector2 offset;
 	private float maxOffset;
-	private Vector3 initPos;
+	private Vector2 initPos;
 	private Vector2 formattedInput;
 
 	public void OnBeginDrag(PointerEventData eventData)
@@ -17,7 +17,14 @@ public class Joystick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
 	public void OnDrag(PointerEventData eventData)
 	{
-		offset = Input.mousePosition - initPos;
+		if (Input.touchCount > 0)
+		{
+			offset = Input.GetTouch(0).position - initPos;
+		}
+		else
+		{
+			offset = new Vector2(Input.mousePosition.x, Input.mousePosition.y) - initPos;
+		}
 
 		if (offset.magnitude > maxOffset)
 		{

@@ -28,6 +28,9 @@ public class BasicBehaviour : MonoBehaviour
 	private int groundedBool;                             // Animator variable related to whether or not the player is on the ground.
 	private Vector3 colExtents;                           // Collider extents for ground test. 
 
+	// Joystick Input
+	private Joystick joystick;
+
 	// Get current horizontal and vertical axes.
 	public float GetH { get { return h; } }
 	public float GetV { get { return v; } }
@@ -55,6 +58,9 @@ public class BasicBehaviour : MonoBehaviour
 		camScript = playerCamera.GetComponent<ThirdPersonOrbitCamBasic> ();
 		rBody = GetComponent<Rigidbody> ();
 
+		// Joystick Input
+		joystick = GameObject.FindGameObjectWithTag("Joystick").GetComponent<Joystick>();
+
 		// Grounded verification variables.
 		groundedBool = Animator.StringToHash("Grounded");
 		colExtents = GetComponent<Collider>().bounds.extents;
@@ -63,8 +69,17 @@ public class BasicBehaviour : MonoBehaviour
 	void Update()
 	{
 		// Store the input axes.
-		h = Input.GetAxis("Horizontal");
-		v = Input.GetAxis("Vertical");
+		// Prioritize Joystick Control over Keyboard Control
+		if (joystick.GetInput().magnitude > 0)
+		{
+			h = joystick.GetInput().x;
+			v = joystick.GetInput().y;
+		}
+		else
+		{
+			h = Input.GetAxis("Horizontal");
+			v = Input.GetAxis("Vertical");
+		}
 
 		// Set the input axes on the Animator Controller.
 		anim.SetFloat(hFloat, h, 0.1f, Time.deltaTime);

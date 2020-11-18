@@ -36,17 +36,17 @@ public class UIM : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Timer(timerText);
+        Timer(timerText);
     }
 
-    //void Timer(Text trackTime )
-    //{
-    //    // has the floats track time in mintues and seconds 
-    //    minutes = (int)(Time.time / 60.0f);
-    //    seconds = (int)(Time.time % 60.0f);
-    //    //converts the floats to a string to be displayed in game 
-    //    trackTime.text = minutes.ToString("00") + ":" + seconds.ToString("00");
-    //}
+    void Timer(Text trackTime)
+    {
+        // has the floats track time in mintues and seconds 
+        minutes = (int)(Time.time / 60.0f);
+        seconds = (int)(Time.time % 60.0f);
+        //converts the floats to a string to be displayed in game 
+        trackTime.text = minutes.ToString("0") + ":" + seconds.ToString("00");
+    }
 
     public void ScoreToText()
     {
@@ -67,9 +67,16 @@ public class UIM : MonoBehaviour
         Panel.SetActive(false);
     }
 
+    //public void MusicToggle() TBC
+    //{
+
+    //}
+
     //closes the application and quits the game 
     public void quitGame()
     {
         Application.Quit();
     }
+
+
 }

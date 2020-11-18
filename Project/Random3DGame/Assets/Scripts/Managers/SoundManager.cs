@@ -5,31 +5,37 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public AudioClip coinSound;
+    //public AudioClip backgroundSound1;
+    //public AudioClip backgroundSound2;
+    //public AudioClip backgroundSound3;
+    //public AudioSource audio;
 
-    private static SoundManager sminstance;
+    private static SoundManager smInstance;
 
     private void Awake()
     {
-        if (sminstance == null)
+        if (smInstance == null)
         {
-            sminstance = this;
-            DontDestroyOnLoad(this);
+            smInstance = this;
+            
         }
-        else if (sminstance != this)
+        else if (smInstance != this)
         {
             Destroy(this.gameObject);
         }
+        DontDestroyOnLoad(gameObject);
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        //audio = GetComponent<AudioSource>();
+        //BackGroundMusic();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //public void BackGroundMusic()
+    //{
+    //    audio.clip = coinSound;
+    //    audio.Play();
+    //}
+
 }

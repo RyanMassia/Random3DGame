@@ -29,6 +29,7 @@ public class BasicBehaviour : MonoBehaviour
 	private Vector3 colExtents;                           // Collider extents for ground test. 
 
 	// Joystick Input
+	private GameObject joystickObject;
 	private Joystick joystick;
 
 	// Get current horizontal and vertical axes.
@@ -59,7 +60,12 @@ public class BasicBehaviour : MonoBehaviour
 		rBody = GetComponent<Rigidbody> ();
 
 		// Joystick Input
-		joystick = GameObject.FindGameObjectWithTag("Joystick").GetComponent<Joystick>();
+		joystickObject = GameObject.FindGameObjectWithTag("Joystick");
+
+		if (joystickObject != null)
+		{
+			joystick = joystickObject.GetComponent<Joystick>();
+		}
 
 		// Grounded verification variables.
 		groundedBool = Animator.StringToHash("Grounded");
@@ -70,7 +76,7 @@ public class BasicBehaviour : MonoBehaviour
 	{
 		// Store the input axes.
 		// Prioritize Joystick Control over Keyboard Control
-		if (joystick.GetInput().magnitude > 0)
+		if (joystick != null && joystick.GetInput().magnitude > 0)
 		{
 			h = joystick.GetInput().x;
 			v = joystick.GetInput().y;

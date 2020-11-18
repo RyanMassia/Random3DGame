@@ -27,6 +27,7 @@ public class ThirdPersonOrbitCamBasic : MonoBehaviour
 	private bool isCustomOffset;                                       // Boolean to determine whether or not a custom camera offset is being used.
 
 	// Joystick Input
+	private GameObject joystickObject;
 	private Joystick joystick;
 
 	// Get the camera horizontal angle.
@@ -52,7 +53,12 @@ public class ThirdPersonOrbitCamBasic : MonoBehaviour
 		ResetMaxVerticalAngle();
 
 		// Joystick Input
-		joystick = GameObject.FindGameObjectWithTag("Joystick").GetComponent<Joystick>();
+		joystickObject = GameObject.FindGameObjectWithTag("Joystick");
+
+		if (joystickObject != null)
+		{
+			joystick = joystickObject.GetComponent<Joystick>();
+		}
 
 		// Check for no vertical offset.
 		if (camOffset.y > 0)
@@ -66,9 +72,14 @@ public class ThirdPersonOrbitCamBasic : MonoBehaviour
 		// Mouse:
 		angleH += Mathf.Clamp(Input.GetAxis("Mouse X"), -1, 1) * horizontalAimingSpeed;
 		angleV += Mathf.Clamp(Input.GetAxis("Mouse Y"), -1, 1) * verticalAimingSpeed;
-		// Joystick:
-		angleH += Mathf.Clamp(joystick.GetInput().x, -1, 1) * 60 * horizontalAimingSpeed * Time.deltaTime;
+		// Physical Joystick:
+		angleH += Mathf.Clamp(Input.GetAxis(XAxis), -1, 1) * 60 * horizontalAimingSpeed * Time.deltaTime;
 		angleV += Mathf.Clamp(Input.GetAxis(YAxis), -1, 1) * 60 * verticalAimingSpeed * Time.deltaTime;
+		// On Screen Joystick
+		if (joystick != null)
+		{
+			angleH += Mathf.Clamp(joystick.GetInput().x, -1, 1) * 60 * horizontalAimingSpeed * Time.deltaTime;
+		}
 
 		// Set vertical movement limit.
 		angleV = Mathf.Clamp(angleV, minVerticalAngle, targetMaxVerticalAngle);

@@ -5,10 +5,10 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public AudioClip coinSound;
-    //public AudioClip backgroundSound1;
-    //public AudioClip backgroundSound2;
-    //public AudioClip backgroundSound3;
-    //public AudioSource audio;
+    public AudioClip backgroundSound1;
+    public AudioClip backgroundSound2;
+    public AudioClip backgroundSound3;
+    public AudioSource audio;
 
     private static SoundManager smInstance;
 
@@ -28,14 +28,14 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        //audio = GetComponent<AudioSource>();
-        //BackGroundMusic();
+        audio = GetComponent<AudioSource>();
+        BackGroundMusic();
     }
 
-    //public void BackGroundMusic()
-    //{
-    //    audio.clip = coinSound;
-    //    audio.Play();
-    //}
+    public void BackGroundMusic()
+    {
+        audio.clip = backgroundSound1;
+        audio.Play();
+    }
 
 }

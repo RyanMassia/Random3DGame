@@ -30,6 +30,7 @@ public class Joystick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 	public void OnEndDrag(PointerEventData eventData)
 	{
 		transform.position = initPos;
+		offset = Vector3.zero;
 		GetComponent<CanvasGroup>().blocksRaycasts = true;
 	}
 
